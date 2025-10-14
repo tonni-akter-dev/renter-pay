@@ -2,17 +2,21 @@
 @import url(https://db.onlinewebfonts.com/c/7b7a625024c0f39cbca2cf9674f51d94?family=General+Sans+Variable);
 
 @font-face {
-    font-family: "General Sans Variable";
-    src: url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.eot");
-    src: url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.svg#General Sans Variable")format("svg");
+  font-family: "General Sans Variable";
+  src: url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.eot");
+  src: url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.svg#General Sans Variable")
+      format("svg");
 }
 
 @theme {
-  --background: #ffffff;
   --foreground: #171717;
   --color-primary-50: #f0e6ec;
   --color-primary-100: #d1b1c5;
@@ -65,7 +69,7 @@
   --color-success-800: #106631;
   --color-success-900: #0c4e25;
   --color-neutral-0: #ffffff;
-  --color-neutral-10: #fafbfb;
+  --color-neutral-10: #434953;
   --color-neutral-20: #f5f6f7;
   --color-neutral-30: #ebedf0;
   --color-neutral-40: #dfe2e6;
@@ -85,6 +89,72 @@
   --color-neutral-900: #091e42;
 }
 
-body{
+body {
   font-family: "General Sans Variable" !important;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+li {
+  line-height: 150%;
+}
+
+@theme {
+  --text-h1: 72px;
+  --text-display: 52px;
+  --text-h2: 42px;
+  --text-h3: 32px;
+  --text-h4: 28px;
+  --text-h5: 24px;
+  --text-xl: 20px;
+  --text-lg: 18px;
+  --text-base: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+}
+
+@theme {
+  /* Existing tokens... */
+
+  /* Shadows */
+  --shadow-button: 0 8px 28px 0 rgba(20, 20, 43, 0.1);
+  /* --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.2); */
+}
+
+.bg_gradient {
+  background: var(
+    --Button-bg,
+    linear-gradient(90deg, #92045a 0%, #ac1972 100%)
+  );
+}
+.bg_gradient:hover {
+  background: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+button:hover {
+  transition: ease-in-out;
+  transition-duration: 500ms;
+}
+
+
+
+@media  (min-width:1020px) and (max-width:1024px) {
+  .container_px {
+    padding-left: 50px !important;
+    padding-right: 50px      !important;
+  }
 }
