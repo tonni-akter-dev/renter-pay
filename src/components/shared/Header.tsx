@@ -38,8 +38,8 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white relative h-[66px] pt-5 ">
-      <div className="lg:px-4 py-[18px] mb-[36px]">
+    <header className="bg-white relative pt-5 ">
+      <div className="lg:px-4 py-[18px] h-[66px] lg:pe-0">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="">
@@ -51,7 +51,6 @@ const Header = () => {
               RenterPay
             </Link>
           </div>
-
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-4 lg:space-x-8">
             <Link
@@ -145,7 +144,7 @@ const Header = () => {
             </div>
 
             {/* Login Button */}
-            <button className="hidden lg:block bg_gradient text-primary-50 text-base font-medium px-4 py-2 rounded-md h-[46px]  transition-colors duration-200 border border-primary-500 !hover:bg-white hover:text-primary-500">
+            <button className="hidden lg:block bg_gradient text-primary-50 text-base font-medium px-4 py-2 rounded-md h-[46px]  transition-colors duration-200 border border-primary-500 !hover:bg-white hover:text-primary-500 me-0">
               Login Now
             </button>
 

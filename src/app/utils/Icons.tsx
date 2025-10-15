@@ -14,9 +14,9 @@ export const HeaderDropdown = () => (
     <path
       d="M7 10L12 15L17 10"
       stroke="black"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -38,54 +38,30 @@ export const Coin = () => (
   <Image className="size-5" src={coin} alt="" />
 );
 
-// User Icon (for Agent)
-export const User = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-  >
-    <path
-      d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-      stroke="#6c0443"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-      stroke="#6c0443"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
+export const Minus = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M5.25 12H19.25" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
 );
-
-// Tools Icon (for Service Vendor - wrench)
-export const Tools = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-  >
-    <path
-      d="M14.8284 14.8284L16.2426 16.2426M16.2426 16.2426L12 20.4853M16.2426 16.2426L20.4853 12M16.2426 16.2426L13.1716 13.1716"
-      stroke="#6c0443"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M9 15H5C4.44772 15 4 14.5523 4 14V10C4 9.44772 4.44772 9 5 9H9C9.55228 9 10 9.44772 10 10V14C10 14.5523 9.55228 15 9 15Z"
-      stroke="#6c0443"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
+export const Search = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M17 17L21 21" stroke="#42526D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="#42526D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+);
+export const PropertyIcon = () => (
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+  <path d="M19.1654 15.1667H21.4987M20.332 10.5H8.66536C6.4837 10.5 5.39403 10.5 4.58203 11.0157C4.05003 11.354 3.60786 11.8393 3.30103 12.425C2.83203 13.3187 2.83203 14.518 2.83203 16.9167C2.83203 19.3153 2.83203 20.5147 3.30103 21.4083C3.60786 21.994 4.05003 22.4793 4.58203 22.8177C5.39403 23.3333 6.4837 23.3333 8.66536 23.3333C9.38053 23.3333 9.7387 23.3333 10.077 23.2785C10.9975 23.1238 11.8469 22.6863 12.5072 22.0267C12.7627 21.7758 12.9914 21.4737 13.4499 20.8682L13.8395 20.3548C14.0705 20.048 14.1872 19.8952 14.3295 19.8345C14.4461 19.7855 14.5763 19.7793 14.697 19.817C14.8429 19.8625 14.9712 20.0037 15.2267 20.2837L16.349 21.518C16.6267 21.8248 16.7655 21.9777 16.9114 22.113C17.6557 22.8083 18.5797 23.2295 19.5527 23.3158C19.7417 23.3333 19.9377 23.3333 20.332 23.3333C22.5137 23.3333 23.6034 23.3333 24.4154 22.8177C24.9474 22.4793 25.3895 21.994 25.6964 21.4083C26.1654 20.5147 26.1654 19.3153 26.1654 16.9167C26.1654 14.518 26.1654 13.3187 25.6964 12.425C25.3997 11.8514 24.9581 11.3656 24.4154 11.0157C23.6034 10.5 22.5137 10.5 20.332 10.5Z" stroke="url(#paint0_linear_16030_13912)" stroke-width="1.75" stroke-linecap="round"/>
+  <path d="M26.1654 17.4993V14.5267C26.1654 13.3833 26.1654 12.8117 26.0755 12.2598C26.0304 11.9881 25.9692 11.7193 25.8924 11.4548C25.7372 10.924 25.4969 10.434 25.0162 9.45402C24.0514 7.48818 23.5695 6.50585 22.866 5.84552C22.5306 5.52912 22.149 5.26556 21.7344 5.06385C20.9095 4.66602 19.9727 4.66602 18.0967 4.66602H10.9007C9.02587 4.66602 8.08903 4.66602 7.2642 5.06268C6.84947 5.26475 6.46789 5.52871 6.13253 5.84552C5.4302 6.50585 4.9472 7.48818 3.98236 9.45402C3.5017 10.434 3.26136 10.924 3.1062 11.4548C3.02936 11.7193 2.9682 11.9881 2.92303 12.2598C2.83203 12.8117 2.83203 13.3833 2.83203 14.5267V17.4993" stroke="url(#paint1_linear_16030_13912)" stroke-width="1.75" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="paint0_linear_16030_13912" x1="2.83203" y1="16.9167" x2="26.1654" y2="16.9167" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#92045A"/>
+      <stop offset="1" stop-color="#AC1972"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_16030_13912" x1="2.83203" y1="11.0827" x2="26.1654" y2="11.0827" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#92045A"/>
+      <stop offset="1" stop-color="#AC1972"/>
+    </linearGradient>
+  </defs>
+</svg>
 );

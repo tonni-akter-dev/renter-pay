@@ -1,0 +1,65 @@
+import { PropertyIcon } from "@/app/utils/Icons";
+import { Property } from "@/app/utils/type";
+import Image from "next/image";
+import { useState } from "react";
+import { FaHeart, FaMapMarkerAlt } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa6";
+
+interface PropertyCardProps {
+  property: Property;
+}
+
+const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
+  const [isFavorite, setIsFavorite] = useState(property.isFavorite || false);
+
+  const toggleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setIsFavorite(!isFavorite);
+  };
+
+  return (
+    <div className="overflow-hidden ">
+      <div className="relative rounded-lg">
+        <img
+          src={property.image}
+          alt={property.name}
+          className="w-full h-[261px] object-cover"
+        />
+        <button
+          className="absolute top-3 right-3 bg-white rounded-full p-2"
+          onClick={toggleFavorite}
+        >
+          {isFavorite ? (
+            <FaHeart className="text-red-500" />
+          ) : (
+            <FaRegHeart className="text-gray-600" />
+          )}
+        </button>
+      </div>
+      <div className="flex gap-[22px]">
+        {property.features.map((feature, index) => (
+          <p key={index} className="text-base text-[#7E8B9C] px-2 py-1 flex gap-1 items-center">
+            <Image className="size-[30px]" src={feature?.icon} alt="" />
+            {feature.name}
+          </p>
+        ))}
+      </div>
+      <div className="">
+       <div className="flex justify-between items-center">
+         <h3 className="font-medium text-black text-xl  mb-2">{property.name}</h3>
+         <PropertyIcon/>
+       </div>
+    
+        <div className="flex gap-2 items-center mb-3">
+          <span className="text-xl font-medium text-black">
+            ${property.price} <span className="text-[#505F79] text-sm ">/week</span>
+          </span>
+          <span className="text-[#00000080] text-lg font-medium">.</span>
+          <span className="text-[#00000080] text-base font-normal ">New York, USA</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PropertyCard;

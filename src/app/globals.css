@@ -150,11 +150,61 @@ button:hover {
   transition-duration: 500ms;
 }
 
+/* Custom styles for range slider */
 
+.range-slider {
+  background: #d1b1c5 !important;
+}
+.range-slider .range-slider__range {
+  background: #6c0443 !important;
+}
+.price-range-slider {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.custom-range-slider {
+  --slider-track-background: #e5e7eb;
+  --slider-track-background--active: #8b5cf6;
+  --slider-thumb-background: #8b5cf6;
+  --slider-thumb-border: #8b5cf6;
+  --slider-thumb-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
+}
+.custom-range-slider .range-slider__thumb {
+  position: relative;
+}
+.range-slider .range-slider__thumb {
+  background: none !important;
+}
+.custom-range-slider .range-slider__thumb::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background-image: url("/range_thumb.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slider-labels {
+  display: flex;
+  gap: 8px;
+}
+.label {
+  text-align: center;
+  color: #6b7280;
+  font-size: 12px;
+}
 
-@media  (min-width:1020px) and (max-width:1024px) {
+.search-component ::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+@media (min-width: 1020px) and (max-width: 1024px) {
   .container_px {
     padding-left: 50px !important;
-    padding-right: 50px      !important;
+    padding-right: 50px !important;
   }
 }
