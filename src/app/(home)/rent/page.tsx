@@ -30,9 +30,9 @@ export default function Home() {
       default:
         break;
     }
-
     setPropertiesList(sorted);
   };
+  
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };

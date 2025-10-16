@@ -1,3 +1,4 @@
+'use client';
 import { PropertyIcon } from "@/app/utils/Icons";
 import { Property } from "@/app/utils/type";
 import Image from "next/image";
@@ -39,18 +40,18 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
           )}
         </button>
       </div>
-      <div className="flex gap-[22px]">
+      <div className="flex gap-[22px] mt-3">
         {property.features.map((feature, index) => (
           <p
             key={index}
-            className="text-base text-[#7E8B9C] px-2 py-1 flex gap-1 items-center"
+            className="text-base text-[#7E8B9C] flex gap-1 items-center"
           >
             <Image className="size-[30px]" src={feature?.icon} alt="" />
             {feature.name}
           </p>
         ))}
       </div>
-      <div className="">
+      <div>
         <div className="flex justify-between items-center">
           <h3 className="font-medium text-black text-xl  mb-2">
             {property.name}
