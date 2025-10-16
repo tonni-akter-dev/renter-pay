@@ -38,7 +38,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="mb-[115px]">
       <main className="">
         <div className="flex flex-col md:flex-row gap-6">
           <Filters />

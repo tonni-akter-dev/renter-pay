@@ -2,8 +2,9 @@ import { PropertyIcon } from "@/app/utils/Icons";
 import { Property } from "@/app/utils/type";
 import Image from "next/image";
 import { useState } from "react";
-import { FaHeart, FaMapMarkerAlt } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
+import star from "../../../../../public/assets/star.png";
 
 interface PropertyCardProps {
   property: Property;
@@ -20,10 +21,12 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   return (
     <div className="overflow-hidden ">
       <div className="relative rounded-lg">
-        <img
+        <Image
+        width={100}
+        height={261}
           src={property.image}
           alt={property.name}
-          className="w-full h-[261px] object-cover"
+          className="w-full h-[261px] rounded-lg object-cover"
         />
         <button
           className="absolute top-3 right-3 bg-white rounded-full p-2"
@@ -38,24 +41,41 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
       </div>
       <div className="flex gap-[22px]">
         {property.features.map((feature, index) => (
-          <p key={index} className="text-base text-[#7E8B9C] px-2 py-1 flex gap-1 items-center">
+          <p
+            key={index}
+            className="text-base text-[#7E8B9C] px-2 py-1 flex gap-1 items-center"
+          >
             <Image className="size-[30px]" src={feature?.icon} alt="" />
             {feature.name}
           </p>
         ))}
       </div>
       <div className="">
-       <div className="flex justify-between items-center">
-         <h3 className="font-medium text-black text-xl  mb-2">{property.name}</h3>
-         <PropertyIcon/>
-       </div>
-    
-        <div className="flex gap-2 items-center mb-3">
-          <span className="text-xl font-medium text-black">
-            ${property.price} <span className="text-[#505F79] text-sm ">/week</span>
-          </span>
-          <span className="text-[#00000080] text-lg font-medium">.</span>
-          <span className="text-[#00000080] text-base font-normal ">New York, USA</span>
+        <div className="flex justify-between items-center">
+          <h3 className="font-medium text-black text-xl  mb-2">
+            {property.name}
+          </h3>
+          <PropertyIcon />
+        </div>
+
+        <div className="flex justify-between items-center">
+          <div className="flex gap-2 items-center">
+            <span className="text-xl font-medium text-black">
+              ${property.price}
+              <span className="text-[#505F79] text-sm ">/week</span>
+            </span>
+            <span className="text-[#00000080] text-lg font-medium">.</span>
+            <span className="text-[#00000080] text-base font-normal ">
+              New York, USA
+            </span>
+          </div>
+          <div className="flex items-center">
+            <Image src={star} alt="" />
+            <Image src={star} alt="" />
+            <Image src={star} alt="" />
+            <Image src={star} alt="" />
+            <Image src={star} alt="" />
+          </div>
         </div>
       </div>
     </div>

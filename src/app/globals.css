@@ -184,7 +184,7 @@ button:hover {
   transform: translate(-50%, -50%);
   width: 16px;
   height: 16px;
-  background-image: url("/range_thumb.png");
+  background-image: url("/assets/range_thumb.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

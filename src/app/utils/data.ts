@@ -1,7 +1,7 @@
 import { Address, Property } from "./type";
-import bed from "../../../public/bed.png";
-import bath from "../../../public/bath.png";
-import size from "../../../public/bed.png";
+import bed from "../../../public/assets/bed.png";
+import bath from "../../../public/assets/bath.png";
+import size from "../../../public/assets/bed.png";
 
 export const propertyType = [
   { key: "house" as const, label: "House" },

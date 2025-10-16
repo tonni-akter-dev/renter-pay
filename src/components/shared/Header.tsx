@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import logo from "../../../public/logo.png";
+import logo from "../../../public/assets/logo.png";
 import { Coin, Dollar, DollarPrimary, HeaderDropdown } from "@/app/utils/Icons";
 // import { House, LandlordHouse } from "@/app/utils/Icons";
 
