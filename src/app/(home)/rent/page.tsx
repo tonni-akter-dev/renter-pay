@@ -30,15 +30,15 @@ export default function Home() {
       default:
         break;
     }
-
     setPropertiesList(sorted);
   };
+  
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="mb-[115px]">
       <main className="">
         <div className="flex flex-col md:flex-row gap-6">
           <Filters />

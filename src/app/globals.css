@@ -184,7 +184,7 @@ button:hover {
   transform: translate(-50%, -50%);
   width: 16px;
   height: 16px;
-  background-image: url("/range_thumb.png");
+  background-image: url("/assets/range_thumb.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -202,6 +202,51 @@ button:hover {
 .search-component ::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+
+.footer_text {
+  background: linear-gradient(90deg, #8A7384 28.67%, #CAC3C3 46.17%);
+  font-size: 262px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.image_thumb .swiper-slide-thumb-active{
+  border: #9D5781 1px solid;
+  
+}
+
+@media (min-width: 1020px) and (max-width: 1024px) {
+  .container_px {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+}
+
+/* Additional media queries for fine-tuned control if needed */
+@media (max-width: 768px) {
+  .footer_text {
+    font-size: clamp(4rem, 12vw, 6rem); /* Smaller on mobile */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer_text {
+    font-size: clamp(6rem, 12vw, 10rem); /* Adjusted for tablet */
+  }
+}
+
+@media (min-width: 1025px) {
+  .footer_text {
+    font-size: clamp(10rem, 18vw, 16.375rem); /* Larger on desktop */
+  }
+}
+
 @media (min-width: 1020px) and (max-width: 1024px) {
   .container_px {
     padding-left: 50px !important;

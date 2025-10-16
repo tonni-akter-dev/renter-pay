@@ -1,4 +1,4 @@
-import reset from '../../../../../public/reset.svg';
+import reset from '../../../../../public/assets/reset.svg';
 import Image from 'next/image';
 
 const ResetButton = () => {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import coin from "../../../public/coin.png";
+import coin from "../../../public/assets/coin.png";
 
 // Chevron Down Icon (your original SVG)
 export const HeaderDropdown = () => (
