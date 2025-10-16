@@ -138,7 +138,7 @@ li {
     linear-gradient(90deg, #92045a 0%, #ac1972 100%)
   );
 }
-.bg_gradient:hover {
+.login_btn:hover {
   background: transparent;
 }
 
@@ -203,9 +203,8 @@ button:hover {
   display: none; /* Chrome, Safari, Opera */
 }
 
-
 .footer_text {
-  background: linear-gradient(90deg, #8A7384 28.67%, #CAC3C3 46.17%);
+  background: linear-gradient(90deg, #8a7384 28.67%, #cac3c3 46.17%);
   font-size: 262px;
   font-weight: 600;
   line-height: 100%;
@@ -215,12 +214,21 @@ button:hover {
   color: transparent;
   text-align: center;
 }
-
-.image_thumb .swiper-slide-thumb-active{
-  border: #9D5781 1px solid;
-  
+.image_thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.image_thumb .swiper-slide-thumb-active img{
+  border: #9d5781 4px solid;
+}
+.image_thumb .swiper-slide {
+  width: 107px !important;
+  border-radius: 8px !important;
+}
+.property_image .swiper-wrapper {
+  height: 570px !important;
+}
 @media (min-width: 1020px) and (max-width: 1024px) {
   .container_px {
     padding-left: 50px !important;

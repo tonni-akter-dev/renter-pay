@@ -120,7 +120,7 @@ const Header = () => {
                 <HeaderDropdown />
               </button>
               {isCurrencyOpen && (
-                <div className="absolute right-0 mt-2 w-[111px] py-3 px-4 bg-white rounded-md shadow-button z-10">
+                <div className="absolute right-0 mt-2 w-[111px] py-3 px-4 bg-white rounded-md z-10">
                   <div className="py-1">
                     {currencies.map((currency) => (
                       <button
@@ -128,7 +128,7 @@ const Header = () => {
                         onClick={() => selectCurrency(currency.code)}
                         className={`flex gap-2 items-center  w-full text-left p-2 text-base ${
                           selectedCurrency === currency.code
-                            ? "bg_gradient rounded-lg text-white font-medium"
+                            ? "bg_gradient rounded-lg text-white font-medium !hover:bg-primary-500"
                             : "text-neutral-50 font-medium "
                         }`}
                       >
@@ -144,7 +144,7 @@ const Header = () => {
             </div>
 
             {/* Login Button */}
-            <button className="hidden lg:block bg_gradient text-primary-50 text-base font-medium px-4 py-2 rounded-md h-[46px]  transition-colors duration-200 border border-primary-500 !hover:bg-white hover:text-primary-500 me-0">
+            <button className="hidden lg:block login_btn bg_gradient text-primary-50 text-base font-medium px-4 py-2 rounded-md h-[46px]  transition-colors duration-200 border border-primary-500 !hover:bg-white hover:text-primary-500 me-0">
               Login Now
             </button>
 
@@ -234,7 +234,7 @@ const Header = () => {
               >
                 Favourite
               </Link>
-              <button className="block lg:hidden bg_gradient text-primary-50 text-base font-medium px-4 py-2 rounded-md h-[46px]  transition-colors duration-200 border border-primary-500 !hover:bg-white hover:text-primary-500">
+              <button className="block lg:hidden login_btn bg_gradient text-primary-50 text-base font-medium px-4 py-2 rounded-md h-[46px]  transition-colors duration-200 border border-primary-500 !hover:bg-white hover:text-primary-500">
                 Login Now
               </button>
             </nav>
