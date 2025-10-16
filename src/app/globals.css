@@ -216,6 +216,11 @@ button:hover {
   text-align: center;
 }
 
+.image_thumb .swiper-slide-thumb-active{
+  border: #9D5781 1px solid;
+  
+}
+
 @media (min-width: 1020px) and (max-width: 1024px) {
   .container_px {
     padding-left: 50px !important;
