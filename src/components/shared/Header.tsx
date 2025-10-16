@@ -74,9 +74,9 @@ const Header = () => {
               Rent
             </Link>
             <Link
-              href="/blogs"
+              href="/blog"
               className={`transition-colors duration-200 ${
-                isActive("/blogs")
+                isActive("/blog")
                   ? "text-primary-500 font-semibold"
                   : "text-neutral-50 font-medium hover:text-primary-500"
               }`}
