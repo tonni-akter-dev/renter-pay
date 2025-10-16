@@ -238,6 +238,11 @@ button:hover {
 
 /* Additional media queries for fine-tuned control if needed */
 @media (max-width: 768px) {
+  
+.property_image .swiper-horizontal {
+  height: 300px !important;
+}
+
   .footer_text {
     font-size: clamp(4rem, 12vw, 6rem); /* Smaller on mobile */
   }

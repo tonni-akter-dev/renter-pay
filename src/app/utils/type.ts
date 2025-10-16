@@ -29,11 +29,20 @@ export interface Property {
   location: string;
   price: number;
   area: number;
-  image: string;
-  features:{
+  images: string[]; // Changed from single image to array of images
+  features: {
     name: string;
     icon: StaticImageData;
-  }[]
+  }[];
   isFavorite: boolean;
+  // Add property details
+  description?: string;
+  bedrooms?: number;
+  bathrooms?: number;
+  size?: string;
+  yearBuilt?: number;
+  amenities?: string[];
+  address?: string;
+  rating?: number;
+  reviews?: number;
 }
-

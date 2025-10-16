@@ -1,12 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    domains: ["z-cdn-media.chatglm.cn"],
+
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',  // Allows all paths, e.g., /seed/property1/400/250.jpg
+        protocol: "https",
+        hostname: "picsum.photos",
+        port: "",
+        pathname: "/**", // Allows all paths, e.g., /seed/property1/400/250.jpg
       },
     ],
   },
