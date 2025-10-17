@@ -135,8 +135,6 @@ const TestimonialSlider: React.FC = () => {
               key={testimonial.id}
               className="flex-shrink-0 gap-8 justify-center items-center cursor-pointer transition-all duration-700 ease-in-out"
               style={{
-                background:
-                  " linear-gradient(270deg, #FAF5FF 0%, #FCF4FF 100%)",
                 width: "1004px",
                 opacity: getCardOpacity(index),
                 transform: `scale(${getCardScale(index)})`,
@@ -146,12 +144,16 @@ const TestimonialSlider: React.FC = () => {
               onClick={() => handleCardClick(index)}
             >
               <div
-                className={`bg-white rounded-4xl  p-8 h-[380px] flex  border border-gray-200 
-                ${
-                  index === activeIndex
-                    ? "ring-4 ring-blue-500 h-[422px] mx-8"
-                    : ""
-                }`}
+                className={`rounded-4xl  p-8 h-[380px] flex
+                ${index === activeIndex ? " h-[422px] mx-8" : ""}`}
+                style={{
+                  background:
+                    " linear-gradient(270deg, #FAF5FF 0%, #FCF4FF 100%)",
+                  boxShadow:
+                    index === activeIndex
+                      ? "0px 8px 28px 0px #14142B1A"
+                      : "0px 7.2px 25.19px 0px #14142B1A",
+                }}
               >
                 <div className="lg:w-[337px]">
                   <Image
@@ -159,7 +161,7 @@ const TestimonialSlider: React.FC = () => {
                     height={345}
                     src={testimonial.imageUrl}
                     alt={testimonial.name}
-                    className="w-24 h-24 rounded-full object-cover mr-6"
+                    className=" object-cover mr-6"
                   />
                 </div>
                 <div>
