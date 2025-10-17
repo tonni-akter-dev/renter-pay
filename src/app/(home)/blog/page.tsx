@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import BlogCard from "@/app/(home)/blog/components/BlogCard";
 import { bioData } from "@/app/utils/data";
 import Pagination from "../rent/component/Pagination";
+import Container from "@/components/shared/Container";
 
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -10,7 +11,7 @@ const Blog = () => {
     setCurrentPage(page);
   };
   return (
-    <div>
+    <Container>
       <h2 className="text-4xl font-semibold text-center">Our Blogs</h2>
       <p className="text-lg text-center mb-10">Read our recent blogs</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -23,7 +24,7 @@ const Blog = () => {
         totalPages={4}
         onPageChange={handlePageChange}
       />
-    </div>
+    </Container>
   );
 };
 

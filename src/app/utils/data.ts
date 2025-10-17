@@ -2,6 +2,16 @@ import { Address, Property } from "./type";
 import bed from "../../../public/assets/bed.png";
 import bath from "../../../public/assets/bath.png";
 import size from "../../../public/assets/bed.png";
+import feature1 from "../../../public/assets/icons/feature1.png";
+import feature2 from "../../../public/assets/icons/feature2.png";
+import feature3 from "../../../public/assets/icons/feature3.png";
+import feature4 from "../../../public/assets/icons/feature4.png";
+import feature5 from "../../../public/assets/icons/feature5.png";
+import feature6 from "../../../public/assets/icons/feature6.png";
+import feature7 from "../../../public/assets/icons/feature7.png";
+import feature8 from "../../../public/assets/icons/feature8.png";
+import feature9 from "../../../public/assets/icons/feature9.png";
+import feature10 from "../../../public/assets/icons/feature10.png";
 
 export const propertyType = [
   { key: "house" as const, label: "House" },
@@ -57,13 +67,54 @@ export const properties: Property[] = [
       },
     ],
     isFavorite: false,
-    description: "A beautiful garden house offering modern facilities and convenience, perfect for families looking for comfort and luxury.",
+    description:
+      "Experience modern living with high-end finishes, including wood-style flooring, sleek Whirlpool stainless steel appliances, and premium amenities designed for comfort and convenience. Enjoy a sophisticated urban lifestyle in a prime location with easy access to dining, entertainment, and business hubs.",
     bedrooms: 7,
     bathrooms: 4,
     size: "2500sft",
     yearBuilt: 2018,
-    amenities: ["Pool", "Gym", "24/7 Security", "Garden", "Parking", "Terrace"],
-    address: "Maple Grove District, New York, USA",
+    amenities: [
+      {
+        name: "Swimming Pool",
+        icon: feature1,
+      },
+      {
+        name: "Gym & Fitness Center",
+        icon: feature2,
+      },
+      {
+        name: "Garden & Outdoor Space",
+        icon: feature3,
+      },
+      {
+        name: "Private Parking",
+        icon: feature4,
+      },
+      {
+        name: "24/7 Security",
+        icon: feature5,
+      },
+      {
+        name: "Nearby Shopping ",
+        icon: feature6,
+      },
+      {
+        name: "Close to Schools",
+        icon: feature7,
+      },
+      {
+        name: "Nearby Restaurants",
+        icon: feature8,
+      },
+      {
+        name: "AC Facilites",
+        icon: feature9,
+      },
+      {
+        name: "Pet Allowance",
+        icon: feature10,
+      },
+    ],    address: "Maple Grove District, New York, USA",
     rating: 4.6,
     reviews: 28,
   },
@@ -95,13 +146,54 @@ export const properties: Property[] = [
       },
     ],
     isFavorite: false,
-    description: "A serene riverside property with breathtaking views and luxurious living spaces.",
+    description:
+      "Experience modern living with high-end finishes, including wood-style flooring, sleek Whirlpool stainless steel appliances, and premium amenities designed for comfort and convenience. Enjoy a sophisticated urban lifestyle in a prime location with easy access to dining, entertainment, and business hubs.",
     bedrooms: 4,
     bathrooms: 4,
     size: "6500sft",
     yearBuilt: 2018,
-    amenities: ["River View", "Terrace", "Wine Cellar", "Home Theater"],
-    address: "456 River Rd, Brooklyn, NY 11201",
+    amenities: [
+      {
+        name: "Swimming Pool",
+        icon: feature1,
+      },
+      {
+        name: "Gym & Fitness Center",
+        icon: feature2,
+      },
+      {
+        name: "Garden & Outdoor Space",
+        icon: feature3,
+      },
+      {
+        name: "Private Parking",
+        icon: feature4,
+      },
+      {
+        name: "24/7 Security",
+        icon: feature5,
+      },
+      {
+        name: "Nearby Shopping ",
+        icon: feature6,
+      },
+      {
+        name: "Close to Schools",
+        icon: feature7,
+      },
+      {
+        name: "Nearby Restaurants",
+        icon: feature8,
+      },
+      {
+        name: "AC Facilites",
+        icon: feature9,
+      },
+      {
+        name: "Pet Allowance",
+        icon: feature10,
+      },
+    ],    address: "456 River Rd, Brooklyn, NY 11201",
     rating: 4.8,
     reviews: 31,
   },
@@ -133,12 +225,54 @@ export const properties: Property[] = [
       },
     ],
     isFavorite: true,
-    description: "A modern urban loft with industrial design elements and high-end finishes.",
+    description:
+      "A modern urban loft with industrial design elements and high-end finishes.",
     bedrooms: 4,
     bathrooms: 4,
     size: "6500sft",
     yearBuilt: 2020,
-    amenities: ["Rooftop Terrace", "Smart Home", "Concierge", "Fitness Center"],
+    amenities: [
+      {
+        name: "Swimming Pool",
+        icon: feature1,
+      },
+      {
+        name: "Gym & Fitness Center",
+        icon: feature2,
+      },
+      {
+        name: "Garden & Outdoor Space",
+        icon: feature3,
+      },
+      {
+        name: "Private Parking",
+        icon: feature4,
+      },
+      {
+        name: "24/7 Security",
+        icon: feature5,
+      },
+      {
+        name: "Nearby Shopping ",
+        icon: feature6,
+      },
+      {
+        name: "Close to Schools",
+        icon: feature7,
+      },
+      {
+        name: "Nearby Restaurants",
+        icon: feature8,
+      },
+      {
+        name: "AC Facilites",
+        icon: feature9,
+      },
+      {
+        name: "Pet Allowance",
+        icon: feature10,
+      },
+    ],
     address: "789 Urban St, Manhattan, NY 10002",
     rating: 4.7,
     reviews: 42,
@@ -171,12 +305,54 @@ export const properties: Property[] = [
       },
     ],
     isFavorite: false,
-    description: "A peaceful suburban home with spacious rooms and a beautiful backyard.",
+    description:
+      "A peaceful suburban home with spacious rooms and a beautiful backyard.",
     bedrooms: 4,
     bathrooms: 4,
     size: "6500sft",
     yearBuilt: 2012,
-    amenities: ["Garden", "Patio", "Fireplace", "Storage"],
+      amenities: [
+      {
+        name: "Swimming Pool",
+        icon: feature1,
+      },
+      {
+        name: "Gym & Fitness Center",
+        icon: feature2,
+      },
+      {
+        name: "Garden & Outdoor Space",
+        icon: feature3,
+      },
+      {
+        name: "Private Parking",
+        icon: feature4,
+      },
+      {
+        name: "24/7 Security",
+        icon: feature5,
+      },
+      {
+        name: "Nearby Shopping ",
+        icon: feature6,
+      },
+      {
+        name: "Close to Schools",
+        icon: feature7,
+      },
+      {
+        name: "Nearby Restaurants",
+        icon: feature8,
+      },
+      {
+        name: "AC Facilites",
+        icon: feature9,
+      },
+      {
+        name: "Pet Allowance",
+        icon: feature10,
+      },
+    ],
     address: "321 Suburban Dr, Queens, NY 11375",
     rating: 4.3,
     reviews: 18,
@@ -209,13 +385,54 @@ export const properties: Property[] = [
       },
     ],
     isFavorite: false,
-    description: "A luxurious apartment with panoramic city views and premium amenities.",
+    description:
+      "A luxurious apartment with panoramic city views and premium amenities.",
     bedrooms: 4,
     bathrooms: 4,
     size: "6500sft",
     yearBuilt: 2019,
-    amenities: ["City View", "Balcony", "Doorman", "Lounge"],
-    address: "555 City View Ave, Manhattan, NY 10003",
+    amenities: [
+      {
+        name: "Swimming Pool",
+        icon: feature1,
+      },
+      {
+        name: "Gym & Fitness Center",
+        icon: feature2,
+      },
+      {
+        name: "Garden & Outdoor Space",
+        icon: feature3,
+      },
+      {
+        name: "Private Parking",
+        icon: feature4,
+      },
+      {
+        name: "24/7 Security",
+        icon: feature5,
+      },
+      {
+        name: "Nearby Shopping ",
+        icon: feature6,
+      },
+      {
+        name: "Close to Schools",
+        icon: feature7,
+      },
+      {
+        name: "Nearby Restaurants",
+        icon: feature8,
+      },
+      {
+        name: "AC Facilites",
+        icon: feature9,
+      },
+      {
+        name: "Pet Allowance",
+        icon: feature10,
+      },
+    ],    address: "555 City View Ave, Manhattan, NY 10003",
     rating: 4.9,
     reviews: 56,
   },
@@ -247,13 +464,54 @@ export const properties: Property[] = [
       },
     ],
     isFavorite: false,
-    description: "A tranquil property surrounded by lush gardens and peaceful scenery.",
+    description:
+      "A tranquil property surrounded by lush gardens and peaceful scenery.",
     bedrooms: 4,
     bathrooms: 4,
     size: "6500sft",
     yearBuilt: 2014,
-    amenities: ["Garden", "Pond", "Greenhouse", "Workshop"],
-    address: "777 Garden Path, Bronx, NY 10451",
+    amenities: [
+      {
+        name: "Swimming Pool",
+        icon: feature1,
+      },
+      {
+        name: "Gym & Fitness Center",
+        icon: feature2,
+      },
+      {
+        name: "Garden & Outdoor Space",
+        icon: feature3,
+      },
+      {
+        name: "Private Parking",
+        icon: feature4,
+      },
+      {
+        name: "24/7 Security",
+        icon: feature5,
+      },
+      {
+        name: "Nearby Shopping ",
+        icon: feature6,
+      },
+      {
+        name: "Close to Schools",
+        icon: feature7,
+      },
+      {
+        name: "Nearby Restaurants",
+        icon: feature8,
+      },
+      {
+        name: "AC Facilites",
+        icon: feature9,
+      },
+      {
+        name: "Pet Allowance",
+        icon: feature10,
+      },
+    ],    address: "777 Garden Path, Bronx, NY 10451",
     rating: 4.4,
     reviews: 22,
   },
@@ -266,8 +524,9 @@ export const bioData = [
     date: "10 Oct, 2025",
     readTime: "2 min read",
     title: "Understanding Your Rental Agreement",
-    description: "Before signing, know your rights and responsibilities as a tenant.",
-    author: "RenterPay Team"
+    description:
+      "Before signing, know your rights and responsibilities as a tenant.",
+    author: "RenterPay Team",
   },
   {
     id: 2,
@@ -275,8 +534,9 @@ export const bioData = [
     date: "12 Oct, 2025",
     readTime: "3 min read",
     title: "5 Things to Check Before Renting an Apartment",
-    description: "From neighborhood safety to hidden fees — here's what to look for.",
-    author: "RenterPay Team"
+    description:
+      "From neighborhood safety to hidden fees — here's what to look for.",
+    author: "RenterPay Team",
   },
 
   {
@@ -286,7 +546,7 @@ export const bioData = [
     readTime: "3 min read",
     title: "How Security Deposits Really Work",
     description: "Know when and how you can get your deposit back legally.",
-    author: "RenterPay Team"
+    author: "RenterPay Team",
   },
 
   {
@@ -295,8 +555,9 @@ export const bioData = [
     date: "24 Oct, 2025",
     readTime: "2 min read",
     title: "Understanding Rent Increases",
-    description: "Learn why your rent might go up and what you can do about it.",
-    author: "RenterPay Team"
+    description:
+      "Learn why your rent might go up and what you can do about it.",
+    author: "RenterPay Team",
   },
   {
     id: 5,
@@ -304,8 +565,9 @@ export const bioData = [
     date: "25 Oct, 2025",
     readTime: "3 min read",
     title: "The Importance of Reading the Fine Print",
-    description: "Don’t skip the small text — it could cost you big time later.",
-    author: "RenterPay Team"
+    description:
+      "Don’t skip the small text — it could cost you big time later.",
+    author: "RenterPay Team",
   },
   {
     id: 6,
@@ -313,8 +575,9 @@ export const bioData = [
     date: "28 Oct, 2025",
     readTime: "4 min read",
     title: "How to Handle Rental Disputes Peacefully",
-    description: "Simple steps to resolve issues with your landlord or neighbors.",
-    author: "RenterPay Team"
+    description:
+      "Simple steps to resolve issues with your landlord or neighbors.",
+    author: "RenterPay Team",
   },
 
   {
@@ -324,7 +587,7 @@ export const bioData = [
     readTime: "3 min read",
     title: "How to Move Out Without Losing Your Deposit",
     description: "Follow this checklist before handing over your keys.",
-    author: "RenterPay Team"
+    author: "RenterPay Team",
   },
   {
     id: 8,
@@ -333,7 +596,7 @@ export const bioData = [
     readTime: "2 min read",
     title: "What Makes a Lease Agreement Legal?",
     description: "Understand the essential clauses that make your lease valid.",
-    author: "RenterPay Team"
+    author: "RenterPay Team",
   },
 
   {
@@ -343,7 +606,7 @@ export const bioData = [
     readTime: "3 min read",
     title: "How to Break a Lease the Right Way",
     description: "Leaving early? Here’s how to do it without legal trouble.",
-    author: "RenterPay Team"
+    author: "RenterPay Team",
   },
   {
     id: 10,
@@ -351,7 +614,8 @@ export const bioData = [
     date: "12 Nov, 2025",
     readTime: "2 min read",
     title: "Understanding Utility Bills in Rentals",
-    description: "Learn which utilities are your responsibility and how to save.",
-    author: "RenterPay Team"
-  }
+    description:
+      "Learn which utilities are your responsibility and how to save.",
+    author: "RenterPay Team",
+  },
 ];

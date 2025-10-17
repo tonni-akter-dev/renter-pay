@@ -6,6 +6,7 @@ import Pagination from "./component/Pagination";
 import CustomSelect from "./component/CustomSelect";
 import { Property, SortOption } from "@/app/utils/type";
 import { properties } from "@/app/utils/data";
+import Container from "@/components/shared/Container";
 
 export default function Home() {
   const [sortBy, setSortBy] = useState<SortOption>("featured");
@@ -38,7 +39,8 @@ export default function Home() {
   };
 
   return (
-    <div className="mb-[115px]">
+ <Container>
+   <div className="mb-[115px]">
       <main className="">
         <div className="flex flex-col md:flex-row gap-6">
           <Filters />
@@ -83,5 +85,7 @@ export default function Home() {
         </div>
       </main>
     </div>
+
+ </Container>
   );
 }

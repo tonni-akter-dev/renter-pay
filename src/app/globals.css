@@ -229,6 +229,20 @@ button:hover {
 .property_image .swiper-wrapper {
   height: 570px !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* responsive  */
 @media (min-width: 1020px) and (max-width: 1024px) {
   .container_px {
     padding-left: 50px !important;

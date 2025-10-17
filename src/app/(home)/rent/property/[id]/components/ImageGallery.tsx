@@ -26,7 +26,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ property }) => {
   };
 
   return (
-    <div className="w-full mb-8">
+    <div className="w-full mb-6">
       <div className="parent grid grid-cols-12 grid-rows-5 gap-4 h-[500px] md:h-[600px]">
         {/* Main large image */}
         <div className="div1 col-span-6 row-span-5 relative overflow-hidden cursor-pointer rounded-lg">

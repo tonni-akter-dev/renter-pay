@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import logo from "../../../public/assets/logo.png";
 import { Coin, Dollar, DollarPrimary, HeaderDropdown } from "@/app/utils/Icons";
+import Container from "./Container";
 // import { House, LandlordHouse } from "@/app/utils/Icons";
 
 const Header = () => {
@@ -38,7 +39,8 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white relative pt-5 ">
+ <Container>
+   <header className="bg-white relative pt-5 ">
       <div className="lg:px-4 py-[18px] h-[66px] lg:pe-0">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -242,6 +244,8 @@ const Header = () => {
         )}
       </div>
     </header>
+
+ </Container>
   );
 };
 

@@ -1,5 +1,6 @@
 // components/Reviews.tsx
-import React from 'react';
+import React from "react";
+import TestimonialSlider from "./TestimonialSlider";
 
 interface Review {
   id: number;
@@ -20,7 +21,9 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
         {[...Array(5)].map((_, i) => (
           <svg
             key={i}
-            className={`w-5 h-5 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+            className={`w-5 h-5 ${
+              i < rating ? "text-yellow-400" : "text-gray-300"
+            }`}
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -33,29 +36,16 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-      <h2 className="text-xl font-bold text-gray-800 mb-4">用户评价</h2>
-      
-      {reviews.length > 0 ? (
-        <div className="space-y-4">
-          {reviews.map(review => (
-            <div key={review.id} className="border-b border-gray-200 pb-4 last:border-0">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-gray-800">{review.name}</h3>
-                <span className="text-sm text-gray-500">{review.date}</span>
-              </div>
-              
-              <div className="mb-2">
-                {renderStars(review.rating)}
-              </div>
-              
-              <p className="text-gray-600">{review.comment}</p>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p className="text-gray-500">暂无评价</p>
-      )}
+    <div>
+      <div className="text-center">
+        <h2 className="text-h2 font-semibold text-primary-900 mb-2">
+          Customer Reviews
+        </h2>
+        <p className="text-neutral-100 text-base font-medium ">
+          Hear what our happy tenants say about Maple Grove Garden House
+        </p>
+      </div>
+            <TestimonialSlider />
     </div>
   );
 };

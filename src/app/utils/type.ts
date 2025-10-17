@@ -21,6 +21,14 @@ export interface Address {
   address: string;
   type: "street" | "address";
 }
+export interface BasicInfo {
+  bedrooms: number;
+  bathrooms: number;
+  size: string;
+  price: string;
+  period: string;
+  location: string;
+}
 
 
 export interface Property {
@@ -41,7 +49,10 @@ export interface Property {
   bathrooms?: number;
   size?: string;
   yearBuilt?: number;
-  amenities?: string[];
+  amenities?: {
+    name: string;
+    icon: StaticImageData;
+  }[];
   address?: string;
   rating?: number;
   reviews?: number;

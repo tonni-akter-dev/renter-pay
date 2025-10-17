@@ -9,6 +9,7 @@ import PropertyDescription from "./PropertyDescription";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import { properties } from "@/app/utils/data"; // Import the properties array
 import { Property } from "@/app/utils/type";
+import Container from "@/components/shared/Container";
 
 interface IProps {
   id: string;
@@ -27,7 +28,7 @@ const PropertyDetails: React.FC<IProps> = ({ id }) => {
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Property Not Found</h1>
           <p className="text-gray-600">
-           {` The property you're looking for doesn't exist or has been removed.`}
+            {` The property you're looking for doesn't exist or has been removed.`}
           </p>
         </div>
       </div>
@@ -59,14 +60,14 @@ const PropertyDetails: React.FC<IProps> = ({ id }) => {
       date: "2023年3月10日",
       comment:
         "完美的家庭度假选择！孩子们特别喜欢泳池和花园。房东非常友好，对我们的问题回应迅速。",
-      },
+    },
   ];
 
   // Create amenities array in the expected format
-  const amenities = propertyData?.amenities.map((amenity) => ({
-    name: amenity,
-    icon: amenity.toLowerCase().replace(/\s+/g, "_"),
-  }));
+  // const amenities = propertyData?.amenities.map((amenity) => ({
+  //   name: amenity,
+  //   icon: amenity.toLowerCase().replace(/\s+/g, "_"),
+  // }));
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
@@ -78,24 +79,24 @@ const PropertyDetails: React.FC<IProps> = ({ id }) => {
     <div className="container mx-auto px-4 py-8">
       <Breadcrumbs items={breadcrumbItems} />
       <div className="mt-6">
-        <ImageGallery property={propertyData} />
+        <Container>
+          <ImageGallery property={propertyData} />
 
-        <PropertyInfo
-          name={propertyData.name}
-          basicInfo={{
-            bedrooms: propertyData.bedrooms || 0,
-            bathrooms: propertyData.bathrooms || 0,
-            size: propertyData.size || "",
-            price: `$${propertyData.price}`,
-            period: "每周",
-            location: propertyData.location,
-          }}
-        />
+          <PropertyInfo property={propertyData} />
 
-        <PropertyDescription description={propertyData.description || ""} />
-        <Amenities amenities={amenities} />
-
-        <LocalInfo location={propertyData.location} />
+          <PropertyDescription description={propertyData.description || ""} />
+          <div className="mb-7">
+            <h2 className="text-h4 font-semibold text-gray-800 mb-6">
+              Key Features & Amenities
+            </h2>
+            <div className="grid grid-cols-1 items-center md:grid-cols-2 gap-2">
+              {propertyData?.amenities?.map((data) => (
+                <Amenities key={data.name} amenity={data} />
+              ))}
+            </div>
+          </div>
+          <LocalInfo location={propertyData.location} />
+        </Container>
         <Reviews reviews={reviews} />
 
         <ContactSection propertyId={propertyData.id.toString()} />
