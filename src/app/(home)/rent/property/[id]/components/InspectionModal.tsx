@@ -4,7 +4,6 @@ import logo from "../../../../../../../public/assets/logo.png";
 import upload from "../../../../../../../public/assets/icons/upload.png";
 import Image from 'next/image';
 
-
 interface IProps {
     closeModal: () => void;
 }
@@ -12,22 +11,43 @@ interface IProps {
 const InspectionModal: React.FC<IProps> = ({ closeModal }) => {
     const [frontSideFile, setFrontSideFile] = useState<File | null>(null);
     const [backSideFile, setBackSideFile] = useState<File | null>(null);
+    const [frontSideUrl, setFrontSideUrl] = useState<string | null>(null);
+    const [backSideUrl, setBackSideUrl] = useState<string | null>(null);
 
     const handleFrontSideChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
-            setFrontSideFile(e.target.files[0]);
+            const file = e.target.files[0];
+            setFrontSideFile(file);
+            
+            // Create a URL for the uploaded file
+            const url = URL.createObjectURL(file);
+            setFrontSideUrl(url);
         }
     };
 
     const handleBackSideChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
-            setBackSideFile(e.target.files[0]);
+            const file = e.target.files[0];
+            setBackSideFile(file);
+            
+            // Create a URL for the uploaded file
+            const url = URL.createObjectURL(file);
+            setBackSideUrl(url);
         }
     };
 
     const handleUpload = () => {
         console.log('Uploading files:', { frontSideFile, backSideFile });
+        // Add your upload logic here
     };
+
+    // Clean up object URLs when component unmounts
+    React.useEffect(() => {
+        return () => {
+            if (frontSideUrl) URL.revokeObjectURL(frontSideUrl);
+            if (backSideUrl) URL.revokeObjectURL(backSideUrl);
+        };
+    }, [frontSideUrl, backSideUrl]);
 
     return (
         <div
@@ -57,7 +77,6 @@ const InspectionModal: React.FC<IProps> = ({ closeModal }) => {
                     <button
                         onClick={closeModal}
                         className="absolute right-8 top-8 text-gray-500 hover:text-gray-700 bg-[#F4F6F8] size-[45px] rounded-full flex justify-center items-center"
-
                         aria-label="Close modal"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,9 +85,8 @@ const InspectionModal: React.FC<IProps> = ({ closeModal }) => {
                     </button>
                 </div>
 
-
                 <div className="flex lg:flex-row flex-col gap-6">
-                    <div className="border-2 border-dashed border-primary-300 rounded-[20px]  py-5 text-center w-full h-[225px]">
+                    <div className="border-2 border-dashed border-primary-300 rounded-[20px] py-5 text-center w-full h-[225px] relative overflow-hidden">
                         <label className="text-primary-900 text-base font-semibold mb-7" htmlFor="frontSide">
                             Front Side
                         </label>
@@ -81,35 +99,37 @@ const InspectionModal: React.FC<IProps> = ({ closeModal }) => {
                         />
                         <label
                             htmlFor="frontSide"
-                            className="cursor-pointer flex flex-col items-center justify-center py-4"
+                            className="cursor-pointer flex flex-col items-center justify-center h-full"
                         >
-                            {frontSideFile ? (
-                                <div className="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <span className="text-sm text-gray-700">{frontSideFile.name}</span>
+                            {frontSideUrl ? (
+                                <div className="relative w-full h-full">
+                                    <img 
+                                        src={frontSideUrl} 
+                                        alt="Front side of ID" 
+                                        className="w-full h-full object-contain"
+                                    />
+                                    <div className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
                                 </div>
                             ) : (
-                                <>
-                                     <div className='flex flex-col items-center'>
+                                <div className='flex flex-col items-center justify-center h-full'>
                                     <Image src={upload} alt="" />
                                     <div className='mt-4'>
                                         <p className="text-base font-semibold text-black">Drag & Drop <span className='text-primary-500'>image</span> here</p>
                                         <Link href="#" className='text-neutral-500 text-sm'>
-                                        <span className='underline text-primary-500'>or browse images </span>
-
-                                        on your computer
+                                            <span className='underline text-primary-500'>or browse images </span>
+                                            on your computer
                                         </Link>
-
                                     </div>
                                 </div>
-                                </>
                             )}
                         </label>
                     </div>
 
-                    <div className="border-2 border-dashed border-primary-300 rounded-[20px]  py-5 text-center w-full h-[225px]">
+                    <div className="border-2 border-dashed border-primary-300 rounded-[20px] py-5 text-center w-full h-[225px] relative overflow-hidden">
                         <label className="text-primary-900 text-base font-semibold mb-7" htmlFor="backSide">
                             Back Side (Optional)
                         </label>
@@ -122,28 +142,32 @@ const InspectionModal: React.FC<IProps> = ({ closeModal }) => {
                         />
                         <label
                             htmlFor="backSide"
-                            className="cursor-pointer flex flex-col items-center justify-center py-4"
+                            className="cursor-pointer flex flex-col items-center justify-center h-full"
                         >
-                            {backSideFile ? (
-                                <div className="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <span className="text-sm text-gray-700">{backSideFile.name}</span>
+                            {backSideUrl ? (
+                                <div className="relative w-full h-full">
+                                    <img 
+                                        src={backSideUrl} 
+                                        alt="Back side of ID" 
+                                        className="w-full h-full object-contain"
+                                    />
+                                    <div className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
                                 </div>
                             ) : (
-                                    <div className='flex flex-col items-center'>
-                                        <Image src={upload} alt="" />
-                                        <div className='mt-4'>
-                                            <p className="text-base font-semibold text-black">Drag & Drop <span className='text-primary-500'>image</span> here</p>
-                                            <Link href="#" className='text-neutral-500 text-sm'>
+                                <div className='flex flex-col items-center justify-center h-full'>
+                                    <Image src={upload} alt="" />
+                                    <div className='mt-4'>
+                                        <p className="text-base font-semibold text-black">Drag & Drop <span className='text-primary-500'>image</span> here</p>
+                                        <Link href="#" className='text-neutral-500 text-sm'>
                                             <span className='underline text-primary-500'>or browse images </span>
-
                                             on your computer
-                                            </Link>
-
-                                        </div>
+                                        </Link>
                                     </div>
+                                </div>
                             )}
                         </label>
                     </div>
@@ -152,13 +176,13 @@ const InspectionModal: React.FC<IProps> = ({ closeModal }) => {
                 <div className="flex justify-center gap-4 mt-6">
                     <button
                         onClick={closeModal}
-                        className="px-4 py-2  text-base font-medium border border-primary-500  rounded-md hover:bg-primary-500 text-primary-500 hover:text-white transition-colors"
+                        className="px-4 py-2 text-base font-medium border border-primary-500 rounded-md hover:bg-primary-500 text-primary-500 hover:text-white transition-colors"
                     >
                         Back
                     </button>
                     <button
                         onClick={handleUpload}
-                        className="px-4 py-2  text-base font-medium border border-primary-500  rounded-md hover:bg-transparent bg-primary-500 hover:text-primary-500 text-white transition-colors"
+                        className="px-4 py-2 text-base font-medium border border-primary-500 rounded-md hover:bg-transparent bg-primary-500 hover:text-primary-500 text-white transition-colors"
                     >
                         Upload
                     </button>

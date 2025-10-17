@@ -1,3 +1,9 @@
+
+/* 
+1. responsive
+2. explore image modal is not showing
+*/
+
 "use client";
 import React from "react";
 import PropertyDetails from "./components/PropertyDetails";
