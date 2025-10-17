@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import logo from "../../../public/assets/logo.png";
 import { Coin, Dollar, DollarPrimary, HeaderDropdown } from "@/app/utils/Icons";
 import Container from "./Container";
-// import { House, LandlordHouse } from "@/app/utils/Icons";
 
 const Header = () => {
   const pathname = usePathname();
@@ -16,7 +15,6 @@ const Header = () => {
     { code: "Coin", symbol: <Coin />, activeSymbol: <Coin /> },
   ];
 
-  // Fix TypeScript error by properly typing the state
   const [selectedCurrency, setSelectedCurrency] = useState<string | null>(null);
   const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);

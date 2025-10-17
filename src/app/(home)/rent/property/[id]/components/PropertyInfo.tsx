@@ -1,12 +1,18 @@
-import {Property } from "@/app/utils/type";
+import { Property } from "@/app/utils/type";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import InspectionModal from "./InspectionModal";
 
 interface PropertyInfoProps {
   property: Property;
 }
 
 const PropertyInfo: React.FC<PropertyInfoProps> = ({ property }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className="mb-8">
       <div className="flex justify-between items-center">
@@ -21,6 +27,8 @@ const PropertyInfo: React.FC<PropertyInfoProps> = ({ property }) => {
             Virtual Tour
           </button>
           <button
+            onClick={openModal}
+
             className=" bg_gradient login_btn  login_btn bg_gradient text-primary-50 text-base font-medium rounded-md  transition-colors duration-200 border border-primary-500 !hover:bg-white hover:text-primary-500  py-2 px-4
             !hover:bg-primary-500"
           >
@@ -40,19 +48,21 @@ const PropertyInfo: React.FC<PropertyInfoProps> = ({ property }) => {
           </p>
         ))}
       </div>
-        <div className="flex justify-between items-center mt-5">
-            <div className="flex gap-20 items-center">
-              <span className="text-xl font-medium text-black">
-                ${property.price}
-                <span className="text-[#505F79] text-sm">/week</span>
-              </span>
-              <span className="text-[#00000080] text-lg font-medium">.</span>
-              <span className="text-[#00000080] text-base font-normal">
-                {property.location}
-              </span>
-            </div>
-          
-          </div>
+      <div className="flex justify-between items-center mt-5">
+        <div className="flex gap-20 items-center">
+          <span className="text-xl font-medium text-black">
+            ${property.price}
+            <span className="text-[#505F79] text-sm">/week</span>
+          </span>
+          <span className="text-[#00000080] text-lg font-medium">.</span>
+          <span className="text-[#00000080] text-base font-normal">
+            {property.location}
+          </span>
+        </div>
+      </div>
+      {
+        isModalOpen && <InspectionModal closeModal={closeModal} />
+      }
     </div>
   );
 };
