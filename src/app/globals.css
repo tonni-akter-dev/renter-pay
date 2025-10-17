@@ -4,16 +4,11 @@
 @font-face {
   font-family: "General Sans Variable";
   src: url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.eot");
-  src: url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.woff")
-      format("woff"),
-    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.ttf")
-      format("truetype"),
-    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.svg#General Sans Variable")
-      format("svg");
+  src: url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.eot?#iefix") format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/7b7a625024c0f39cbca2cf9674f51d94.svg#General Sans Variable") format("svg");
 }
 
 @theme {
@@ -92,6 +87,7 @@
 body {
   font-family: "General Sans Variable" !important;
 }
+
 body,
 h1,
 h2,
@@ -132,12 +128,18 @@ li {
   --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.2); */
 }
 
-.bg_gradient {
-  background: var(
-    --Button-bg,
-    linear-gradient(90deg, #92045a 0%, #ac1972 100%)
-  );
+
+.img_bg {
+  background-image: url('/assets/customer_img_bg.png');
+  height: 351px;
+  background-repeat: no-repeat;
 }
+
+.bg_gradient {
+  background: var(--Button-bg,
+      linear-gradient(90deg, #92045a 0%, #ac1972 100%));
+}
+
 .login_btn:hover {
   background: transparent;
 }
@@ -145,6 +147,7 @@ li {
 button {
   cursor: pointer;
 }
+
 button:hover {
   transition: ease-in-out;
   transition-duration: 500ms;
@@ -155,14 +158,17 @@ button:hover {
 .range-slider {
   background: #d1b1c5 !important;
 }
+
 .range-slider .range-slider__range {
   background: #6c0443 !important;
 }
+
 .price-range-slider {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
 }
+
 .custom-range-slider {
   --slider-track-background: #e5e7eb;
   --slider-track-background--active: #8b5cf6;
@@ -170,12 +176,15 @@ button:hover {
   --slider-thumb-border: #8b5cf6;
   --slider-thumb-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
 }
+
 .custom-range-slider .range-slider__thumb {
   position: relative;
 }
+
 .range-slider .range-slider__thumb {
   background: none !important;
 }
+
 .custom-range-slider .range-slider__thumb::before {
   content: "";
   position: absolute;
@@ -189,10 +198,12 @@ button:hover {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .slider-labels {
   display: flex;
   gap: 8px;
 }
+
 .label {
   text-align: center;
   color: #6b7280;
@@ -200,7 +211,8 @@ button:hover {
 }
 
 .search-component ::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
+  /* Chrome, Safari, Opera */
 }
 
 .footer_text {
@@ -214,18 +226,22 @@ button:hover {
   color: transparent;
   text-align: center;
 }
+
 .image_thumb {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.image_thumb .swiper-slide-thumb-active img{
+
+.image_thumb .swiper-slide-thumb-active img {
   border: #9d5781 4px solid;
 }
+
 .image_thumb .swiper-slide {
   width: 107px !important;
   border-radius: 8px !important;
 }
+
 .property_image .swiper-wrapper {
   height: 570px !important;
 }
@@ -252,25 +268,28 @@ button:hover {
 
 /* Additional media queries for fine-tuned control if needed */
 @media (max-width: 768px) {
-  
-.property_image .swiper-horizontal {
-  height: 300px !important;
-}
+
+  .property_image .swiper-horizontal {
+    height: 300px !important;
+  }
 
   .footer_text {
-    font-size: clamp(4rem, 12vw, 6rem); /* Smaller on mobile */
+    font-size: clamp(4rem, 12vw, 6rem);
+    /* Smaller on mobile */
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .footer_text {
-    font-size: clamp(6rem, 12vw, 10rem); /* Adjusted for tablet */
+    font-size: clamp(6rem, 12vw, 10rem);
+    /* Adjusted for tablet */
   }
 }
 
 @media (min-width: 1025px) {
   .footer_text {
-    font-size: clamp(10rem, 18vw, 16.375rem); /* Larger on desktop */
+    font-size: clamp(10rem, 18vw, 16.375rem);
+    /* Larger on desktop */
   }
 }
 

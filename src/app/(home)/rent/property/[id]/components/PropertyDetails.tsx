@@ -4,24 +4,22 @@ import PropertyInfo from "./PropertyInfo";
 import Amenities from "./Amenities";
 import LocalInfo from "./LocalInfo";
 import Reviews from "./Reviews";
-import ContactSection from "./ContactSection";
 import PropertyDescription from "./PropertyDescription";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
-import { properties } from "@/app/utils/data"; // Import the properties array
+import { properties } from "@/app/utils/data";
 import { Property } from "@/app/utils/type";
 import Container from "@/components/shared/Container";
+import Consultation from "./Consultation";
 
 interface IProps {
   id: string;
 }
 
 const PropertyDetails: React.FC<IProps> = ({ id }) => {
-  // Find the property with the matching ID
   const propertyData: Property | undefined = properties.find(
     (property) => property.id === parseInt(id)
   );
 
-  // If property not found, show a message
   if (!propertyData) {
     return (
       <div className="container mx-auto px-4 py-8">
@@ -35,40 +33,6 @@ const PropertyDetails: React.FC<IProps> = ({ id }) => {
     );
   }
 
-  // Create reviews array in the expected format
-  const reviews = [
-    {
-      id: 1,
-      name: "James Carter",
-      rating: 5,
-      date: "2023年5月15日",
-      comment:
-        "非常棒的住宿体验！房子宽敞明亮，设施齐全，位置便利。强烈推荐给计划来纽约旅游的朋友们。",
-    },
-    {
-      id: 2,
-      name: "Emily Johnson",
-      rating: 4,
-      date: "2023年4月22日",
-      comment:
-        "房子很漂亮，社区环境也很好。唯一的小问题是WiFi信号在某些区域不太稳定。总体来说还是很满意的。",
-    },
-    {
-      id: 3,
-      name: "Michael Chen",
-      rating: 5,
-      date: "2023年3月10日",
-      comment:
-        "完美的家庭度假选择！孩子们特别喜欢泳池和花园。房东非常友好，对我们的问题回应迅速。",
-    },
-  ];
-
-  // Create amenities array in the expected format
-  // const amenities = propertyData?.amenities.map((amenity) => ({
-  //   name: amenity,
-  //   icon: amenity.toLowerCase().replace(/\s+/g, "_"),
-  // }));
-
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Rent", href: "/rent" },
@@ -76,14 +40,12 @@ const PropertyDetails: React.FC<IProps> = ({ id }) => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="">
       <Breadcrumbs items={breadcrumbItems} />
       <div className="mt-6">
         <Container>
           <ImageGallery property={propertyData} />
-
           <PropertyInfo property={propertyData} />
-
           <PropertyDescription description={propertyData.description || ""} />
           <div className="mb-7">
             <h2 className="text-h4 font-semibold text-gray-800 mb-6">
@@ -97,9 +59,8 @@ const PropertyDetails: React.FC<IProps> = ({ id }) => {
           </div>
           <LocalInfo location={propertyData.location} />
         </Container>
-        <Reviews reviews={reviews} />
-
-        <ContactSection propertyId={propertyData.id.toString()} />
+        <Reviews />
+        <Consultation />
       </div>
     </div>
   );

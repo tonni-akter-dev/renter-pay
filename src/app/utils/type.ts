@@ -57,3 +57,13 @@ export interface Property {
   rating?: number;
   reviews?: number;
 }
+
+
+export  interface TestimonialCard {
+  id: number;
+  name: string;
+  location: string;
+  content: string;
+  rating: number;
+  imageUrl: string;
+}

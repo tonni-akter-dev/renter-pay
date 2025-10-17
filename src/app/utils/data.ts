@@ -1,4 +1,4 @@
-import { Address, Property } from "./type";
+import { Address, Property, TestimonialCard } from "./type";
 import bed from "../../../public/assets/bed.png";
 import bath from "../../../public/assets/bath.png";
 import size from "../../../public/assets/bed.png";
@@ -619,3 +619,52 @@ export const bioData = [
     author: "RenterPay Team",
   },
 ];
+
+export   const testimonials: TestimonialCard[] = [
+    {
+      id: 1,
+      name: "James Carter",
+      location: "Los Angeles, USA",
+      content:
+        "I love the natural light and spaciousness of this apartment. The 24/7 security gives me peace of mind. The neighborhood is quiet and the neighbors are friendly.",
+      rating: 5,
+      imageUrl:
+        "https://z-cdn-media.chatglm.cn/files/5cc2a707-34ae-4557-aa26-fd1f341fc52c_pasted_image_1760684869084.png?auth_key=1792220877-57137f3c85d54cff8cd2271607e8189e-0-1d4870130c9cd916be8b85da87cac676",
+    },
+    {
+      id: 2,
+      name: "Emily Rodriguez",
+      location: "New York, USA",
+      content:
+        "The location is perfect for my daily commute. The amenities are top-notch and the management is responsive. I couldn't ask for a better place to live.",
+      rating: 5,
+      imageUrl: "https://picsum.photos/seed/testimonial2/200/200.jpg",
+    },
+    {
+      id: 3,
+      name: "Michael Chen",
+      location: "San Francisco, USA",
+      content:
+        "Modern design with excellent layout. The neighborhood is quiet yet close to everything I need. The building facilities are exceptional.",
+      rating: 5,
+      imageUrl: "https://picsum.photos/seed/testimonial3/200/200.jpg",
+    },
+    {
+      id: 4,
+      name: "Sarah Johnson",
+      location: "Chicago, USA",
+      content:
+        "Spacious rooms with great views. The building has excellent facilities and the community is friendly. I've been living here for two years and love it.",
+      rating: 5,
+      imageUrl: "https://picsum.photos/seed/testimonial4/200/200.jpg",
+    },
+    {
+      id: 5,
+      name: "David Williams",
+      location: "Seattle, USA",
+      content:
+        "Perfect for my family. The schools nearby are great and the park is just a few blocks away. The apartment is spacious and well-maintained.",
+      rating: 5,
+      imageUrl: "https://picsum.photos/seed/testimonial5/200/200.jpg",
+    },
+  ];
